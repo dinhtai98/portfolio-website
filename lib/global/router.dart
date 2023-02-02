@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_website/home_page.dart';
 import 'package:portfolio_website/ui/loading_page.dart';
 import 'package:portfolio_website/ui/not_found_page.dart';
 
 class MyRouter {
-  static const String loadingPage = '/loadingPage';
+  static const String loadingPage = '/loading-page';
+  static const String homePage = '/home-page';
   static PageRouteBuilder _buildRouteNavigationWithoutEffect(
       RouteSettings settings, Widget widget) {
     return PageRouteBuilder(
@@ -38,6 +40,11 @@ class MyRouter {
         return _buildRouteNavigationWithoutEffect(
           settings,
           const LoadingPage(),
+        );
+      case homePage:
+        return _buildRouteNavigationWithoutEffect(
+          settings,
+          const HomePage(),
         );
       default:
         return _buildRouteNavigationWithoutEffect(
