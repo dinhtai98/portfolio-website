@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio_website/core/utils/animation_ease_in.dart';
+import 'package:portfolio_website/core/utils/animation_ease.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
@@ -19,11 +19,11 @@ class WrapperPage extends StatefulWidget {
 class _WrapperPageState extends State<WrapperPage> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    debugPrint('Build Wrapper');
     return Stack(
       children: [
         SizedBox(
-          height: size.height,
+          height: 260.sp,
           child: Container(
             width: double.infinity,
             color: ColorUtils.black,
@@ -32,18 +32,21 @@ class _WrapperPageState extends State<WrapperPage> {
         Align(
           alignment: Alignment.centerRight,
           child: SizedBox(
-            height: size.height,
+            height: 260.sp,
             child: Container(
-              width: size.width - 100.w,
+              width: 260.sp,
               color: ColorUtils.darkBlue,
             ),
           ),
         ),
-        Column(
-          children: const [
-            _NavigationBar(),
-            _WrapperWidget(),
-          ],
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15.w),
+          child: Column(
+            children: const [
+              _NavigationBar(),
+              _WrapperWidget(),
+            ],
+          ),
         ),
       ],
     );
@@ -65,8 +68,8 @@ class _NavigationBar extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/logo.png',
-            cacheWidth: 200,
-            cacheHeight: 200,
+            width: 80.r,
+            height: 80.r,
             fit: BoxFit.fill,
           ),
           if (size.width >= Constants.minWidthScale)
