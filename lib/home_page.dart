@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/ui/experience_page.dart';
 import 'package:portfolio_website/ui/philosophy_values_page.dart';
+import 'package:portfolio_website/ui/skillset_page.dart';
 import 'package:portfolio_website/ui/wrapper_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> {
           WrapperPage(),
           ExperiencePage(),
           PhilosophyAndValuesPage(),
+          SkillSetPage(),
         ],
       ),
     );
