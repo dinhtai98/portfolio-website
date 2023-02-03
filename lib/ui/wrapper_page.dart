@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio_website/core/utils/animation_ease_in.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
 
 part 'widgets/dropdown_widget.dart';
+part 'widgets/wrapper_widget.dart';
 
 class WrapperPage extends StatefulWidget {
   const WrapperPage({super.key});
@@ -90,6 +92,7 @@ class _NavLink extends StatelessWidget {
               //TODO
             },
             name: 'Experience',
+            backgroundColor: ColorUtils.darkBlue,
           ),
         ),
         Expanded(
@@ -98,6 +101,7 @@ class _NavLink extends StatelessWidget {
               //TODO
             },
             name: 'Work',
+            backgroundColor: ColorUtils.darkBlue,
           ),
         ),
         Expanded(
@@ -106,6 +110,7 @@ class _NavLink extends StatelessWidget {
               //TODO
             },
             name: 'Photography',
+            backgroundColor: ColorUtils.darkBlue,
           ),
         ),
         Expanded(
@@ -118,17 +123,6 @@ class _NavLink extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class _WrapperWidget extends StatelessWidget {
-  const _WrapperWidget();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: const Text('Wrapper Widget'),
     );
   }
 }
