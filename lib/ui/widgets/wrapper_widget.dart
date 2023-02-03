@@ -9,7 +9,7 @@ class _WrapperWidget extends StatelessWidget {
     var descriptionDuration = const Duration(milliseconds: 300);
     return Stack(
       children: [
-        AnimationEaseIn(
+        AnimationEase(
           offset: Tween<Offset>(
             begin: const Offset(-0.3, 0.0),
             end: const Offset(0.0, 0.0),
@@ -21,6 +21,7 @@ class _WrapperWidget extends StatelessWidget {
               'assets/images/avatar.jpg',
               width: 160.sp,
               height: 160.sp,
+              fit: BoxFit.fill,
               opacity: const AlwaysStoppedAnimation(.9),
             ),
           ),
@@ -30,7 +31,7 @@ class _WrapperWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AnimationEaseIn(
+              AnimationEase(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),
@@ -42,7 +43,7 @@ class _WrapperWidget extends StatelessWidget {
                       .copyWith(color: ColorUtils.white),
                 ),
               ),
-              AnimationEaseIn(
+              AnimationEase(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),
@@ -55,7 +56,7 @@ class _WrapperWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              AnimationEaseIn(
+              AnimationEase(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),

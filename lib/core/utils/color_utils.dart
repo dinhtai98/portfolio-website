@@ -51,6 +51,9 @@ class ColorUtils {
   static Color white = const Color(0xFFFFFFFF);
   static Color black = const Color.fromARGB(255, 0, 0, 0);
   static Color blue = const Color.fromARGB(255, 25, 0, 255);
+  static Color lightBlue = const Color(0xFF609BFF);
+  static Color lightBe = const Color(0xFFFFF3E4);
+  static Color green = const Color.fromARGB(255, 43, 255, 0);
   static Color darkBlue = const Color(0xFF181823);
   static Color transparent07 = const Color.fromRGBO(255, 255, 255, 0.7);
   static Color background =
