@@ -5,6 +5,8 @@ import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
+import 'package:portfolio_website/global/global_data.dart';
+import 'package:portfolio_website/global/locator.dart';
 
 part 'widgets/dropdown_widget.dart';
 part 'widgets/wrapper_widget.dart';
@@ -20,10 +22,11 @@ class _WrapperPageState extends State<WrapperPage> {
   @override
   Widget build(BuildContext context) {
     debugPrint('Build Wrapper');
+    var isMobile = locator<GlobalData>().isMobileSize;
     return Stack(
       children: [
         SizedBox(
-          height: 260.sp,
+          height: isMobile ? 550.sp : 260.sp,
           child: Container(
             width: double.infinity,
             color: ColorUtils.black,
@@ -32,9 +35,9 @@ class _WrapperPageState extends State<WrapperPage> {
         Align(
           alignment: Alignment.centerRight,
           child: SizedBox(
-            height: 260.sp,
+            height: isMobile ? 550.sp : 260.sp,
             child: Container(
-              width: 260.sp,
+              width: isMobile ? double.infinity : 260.sp,
               color: ColorUtils.darkBlue,
             ),
           ),
@@ -72,7 +75,7 @@ class _NavigationBar extends StatelessWidget {
             height: 80.r,
             fit: BoxFit.fill,
           ),
-          if (size.width >= Constants.minWidthScale)
+          if (!locator<GlobalData>().isMobileSize)
             SizedBox(width: size.width - 200.w, child: const _NavLink())
           else
             const _DropdownWidget(),

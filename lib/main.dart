@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: NavigationUtils.navigatorKey,
           onGenerateRoute: (settings) => MyRouter.generateRoute(settings),
           navigatorObservers: [MyRouteObserver()],
-          initialRoute: MyRouter.loadingPage,
+          initialRoute: MyRouter.homePage,
           theme: ThemeData(
             primarySwatch: Colors.blue,
             scaffoldBackgroundColor: Colors.white,

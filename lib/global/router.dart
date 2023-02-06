@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/home_page.dart';
 import 'package:portfolio_website/ui/loading_page.dart';
-import 'package:portfolio_website/ui/not_found_page.dart';
 
 class MyRouter {
   static const String loadingPage = '/loading-page';
@@ -49,7 +48,7 @@ class MyRouter {
       default:
         return _buildRouteNavigationWithoutEffect(
           settings,
-          const NotFoundPage(),
+          const HomePage(),
         );
     }
   }
