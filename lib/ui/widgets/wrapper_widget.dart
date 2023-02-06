@@ -40,7 +40,7 @@ class _WrapperWidget extends StatelessWidget {
                   animationDuration: baseDuration,
                   child: Text(
                     "I'm Dinh Tai. \nA Device Developer",
-                    style: TextStyleUtils.bold(18.sp)
+                    style: TextStyleUtils.bold(16.sp)
                         .copyWith(color: ColorUtils.white),
                   ),
                 ),
@@ -52,7 +52,7 @@ class _WrapperWidget extends StatelessWidget {
                   animationDuration: baseDuration,
                   child: Text(
                     'based in Ho Chi Minh.',
-                    style: TextStyleUtils.bold(18.sp)
+                    style: TextStyleUtils.bold(16.sp)
                         .copyWith(color: ColorUtils.transparent07),
                   ),
                 ),

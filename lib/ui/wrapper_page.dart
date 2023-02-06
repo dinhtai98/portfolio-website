@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
-import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
 import 'package:portfolio_website/global/global_data.dart';
@@ -26,7 +25,7 @@ class _WrapperPageState extends State<WrapperPage> {
     return Stack(
       children: [
         SizedBox(
-          height: isMobile ? 550.sp : 260.sp,
+          height: isMobile ? 550.sp : 220.sp,
           child: Container(
             width: double.infinity,
             color: ColorUtils.black,
@@ -35,9 +34,9 @@ class _WrapperPageState extends State<WrapperPage> {
         Align(
           alignment: Alignment.centerRight,
           child: SizedBox(
-            height: isMobile ? 550.sp : 260.sp,
+            height: isMobile ? 550.sp : 220.sp,
             child: Container(
-              width: isMobile ? double.infinity : 260.sp,
+              width: isMobile ? double.infinity : 220.sp,
               color: ColorUtils.darkBlue,
             ),
           ),
