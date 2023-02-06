@@ -3,6 +3,7 @@ import 'package:portfolio_website/ui/experience_page.dart';
 import 'package:portfolio_website/ui/my_projects_page.dart';
 import 'package:portfolio_website/ui/philosophy_values_page.dart';
 import 'package:portfolio_website/ui/skillset_page.dart';
+import 'package:portfolio_website/ui/testimonial_section.dart';
 import 'package:portfolio_website/ui/wrapper_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           PhilosophyAndValuesPage(),
           SkillSetPage(),
           MyProjectsPage(),
+          TestimonialSectionPage(),
         ],
       ),
     );
