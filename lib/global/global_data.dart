@@ -1,3 +1,4 @@
 class GlobalData {
-  GlobalData();
+  GlobalData({this.isMobileSize = false});
+  bool isMobileSize;
 }

@@ -35,9 +35,9 @@ class _CustomSlideTransitionState extends State<CustomSlideTransition>
 
   @override
   void didChangeDependencies() {
-    Future.delayed(widget.delay!, () {
-      _controller.forward();
-    });
+    // Future.delayed(widget.delay!, () {
+    _controller.forward();
+    // });
     super.didChangeDependencies();
   }
 
