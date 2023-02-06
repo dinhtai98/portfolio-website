@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
@@ -74,7 +75,7 @@ class _NavigationBar extends StatelessWidget {
             height: 80.r,
             fit: BoxFit.fill,
           ),
-          if (!locator<GlobalData>().isMobileSize)
+          if (size.width >= Constants.minWidthScale)
             SizedBox(width: size.width - 200.w, child: const _NavLink())
           else
             const _DropdownWidget(),
