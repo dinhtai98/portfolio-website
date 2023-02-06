@@ -9,7 +9,7 @@ class _WrapperWidget extends StatelessWidget {
     var descriptionDuration = const Duration(milliseconds: 300);
     return Stack(
       children: [
-        AnimationEase(
+        CustomSlideTransition(
           offset: Tween<Offset>(
             begin: const Offset(-0.3, 0.0),
             end: const Offset(0.0, 0.0),
@@ -31,7 +31,7 @@ class _WrapperWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AnimationEase(
+              CustomSlideTransition(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),
@@ -43,7 +43,7 @@ class _WrapperWidget extends StatelessWidget {
                       .copyWith(color: ColorUtils.white),
                 ),
               ),
-              AnimationEase(
+              CustomSlideTransition(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),
@@ -56,7 +56,7 @@ class _WrapperWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              AnimationEase(
+              CustomSlideTransition(
                 offset: Tween<Offset>(
                   begin: const Offset(1, 0.0),
                   end: const Offset(0.0, 0.0),

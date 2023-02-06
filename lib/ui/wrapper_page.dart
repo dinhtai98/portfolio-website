@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio_website/core/utils/animation_ease.dart';
+import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio_website/core/utils/animation_ease.dart';
+import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
 
@@ -130,7 +130,7 @@ class _BuildSkillInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnimationEase(
+    return CustomSlideTransition(
       offset: Tween<Offset>(
         begin: const Offset(0.2, 0.0),
         end: const Offset(0.0, 0.0),
