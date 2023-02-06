@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class AnimationEase extends StatefulWidget {
+class CustomSlideTransition extends StatefulWidget {
   final Widget child;
   final Tween<Offset> offset;
   final Duration? delay;
   final Duration animationDuration;
   final Curve? curve;
-  const AnimationEase({
+  const CustomSlideTransition({
     Key? key,
     required this.child,
     required this.offset,
@@ -16,10 +16,10 @@ class AnimationEase extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AnimationEase> createState() => _AnimationEaseState();
+  State<CustomSlideTransition> createState() => _CustomSlideTransitionState();
 }
 
-class _AnimationEaseState extends State<AnimationEase>
+class _CustomSlideTransitionState extends State<CustomSlideTransition>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<Offset> _offset = widget.offset.animate(CurvedAnimation(
@@ -30,10 +30,20 @@ class _AnimationEaseState extends State<AnimationEase>
   void initState() {
     _controller =
         AnimationController(duration: widget.animationDuration, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
     Future.delayed(widget.delay!, () {
       _controller.forward();
     });
-    super.initState();
+    super.didChangeDependencies();
+  }
+
+  @override
+  void deactivate() {
+    super.deactivate();
   }
 
   @override

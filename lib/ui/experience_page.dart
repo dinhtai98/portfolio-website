@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio_website/core/utils/animation_ease.dart';
+import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
 
@@ -33,7 +33,7 @@ class ExperiencePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: AnimationEase(
+                child: CustomSlideTransition(
                   offset: Tween<Offset>(
                     begin: const Offset(-0.3, 0.0),
                     end: const Offset(0.0, 0.0),
@@ -117,7 +117,7 @@ class ExperiencePage extends StatelessWidget {
               ),
               SizedBox(width: 10.sp),
               Expanded(
-                child: AnimationEase(
+                child: CustomSlideTransition(
                   offset: Tween<Offset>(
                     begin: const Offset(-0.3, 0.0),
                     end: const Offset(0.0, 0.0),
