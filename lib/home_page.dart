@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_website/ui/experience_page.dart';
+import 'package:portfolio_website/ui/footer.dart';
 import 'package:portfolio_website/ui/my_projects_page.dart';
 import 'package:portfolio_website/ui/philosophy_values_page.dart';
 import 'package:portfolio_website/ui/skillset_page.dart';
@@ -25,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           SkillSetPage(),
           MyProjectsPage(),
           TestimonialSectionPage(),
+          Footer(),
         ],
       ),
     );
