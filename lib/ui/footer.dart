@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build FooterPage');
+    // debugPrint('Build FooterPage');
     if (locator<GlobalData>().isMobileSize) {
       return Container(
         height: 180.sp,

@@ -12,7 +12,7 @@ class MyProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build SkillSetPage');
+    // debugPrint('Build SkillSetPage');
     if (!locator<GlobalData>().isMobileSize) {
       return Container(
         color: ColorUtils.black,

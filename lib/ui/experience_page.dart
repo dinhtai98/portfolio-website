@@ -11,7 +11,7 @@ class ExperiencePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build Experience');
+    // debugPrint('Build Experience');
     if (!locator<GlobalData>().isMobileSize) {
       return Container(
         height: 240.sp,

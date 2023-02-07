@@ -11,7 +11,7 @@ class TestimonialSectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build TestimonialSectionPage');
+    // debugPrint('Build TestimonialSectionPage');
     if (!locator<GlobalData>().isMobileSize) {
       return Container(
         height: 220.sp,
