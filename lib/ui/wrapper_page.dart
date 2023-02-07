@@ -21,7 +21,7 @@ class WrapperPage extends StatefulWidget {
 class _WrapperPageState extends State<WrapperPage> {
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build Wrapper');
+    // debugPrint('Build Wrapper');
     var isMobile = locator<GlobalData>().isMobileSize;
     return Stack(
       children: [

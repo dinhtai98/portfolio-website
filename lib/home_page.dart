@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    debugPrint('Build HomePage');
+    // debugPrint('Build HomePage');
     locator<GlobalData>().isMobileSize =
         MediaQuery.of(context).size.width <= Constants.mobileWidthScale;
     return Scaffold(
