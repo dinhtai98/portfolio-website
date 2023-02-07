@@ -21,7 +21,7 @@ void configureApp() {
 Future<void> mainDelegate() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
-  configureApp();
+  // configureApp();
   runApp(const MyApp());
 }
 
