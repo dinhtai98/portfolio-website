@@ -1,6 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:get/get.dart';
+
 import 'package:portfolio_website/core/utils/navigation_utils.dart';
 import 'package:portfolio_website/global/locator.dart';
 import 'package:portfolio_website/global/my_router_observer.dart';
@@ -10,9 +14,14 @@ void main() {
   mainDelegate();
 }
 
+void configureApp() {
+  setUrlStrategy(PathUrlStrategy());
+}
+
 Future<void> mainDelegate() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupLocator();
+  configureApp();
   runApp(const MyApp());
 }
 
