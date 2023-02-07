@@ -18250,7 +18250,7 @@ this.a=null},
 aaH(a,b){var s=null,r=A.a([],t.F8),q=$.a9,p=t.hR,o=t.th,n=A.oH(B.bp),m=A.a([],t.tD),l=$.bc(),k=$.a9
 return new A.uo(new A.Wa(b),B.u,!1,s,r,new A.bq(s,t.pN),new A.bq(s,t.A),new A.up(),s,0,new A.aQ(new A.aa(q,p),o),n,m,a,new A.e3(s,l),new A.aQ(new A.aa(k,p),o),t.no)},
 amt(a){switch(a.a){case"/loading-page":return A.aaH(a,B.Dm)
-case"/":return A.aaH(a,B.lP)
+case"/home-page":return A.aaH(a,B.lP)
 default:return A.aaH(a,B.lP)}},
 Wa:function Wa(a){this.a=a},
 td:function td(a){this.a=a},
@@ -58644,7 +58644,7 @@ return new A.vb(A.ae1(B.C9,null,null,!1),null)}}
 A.D9.prototype={
 H(a){return new A.ve(new A.W3(),null)}}
 A.W3.prototype={
-$2(a,b){return new A.lV($.ai_(),"/",new A.W2(),A.a([new A.Db(A.z(t.qK,t.pT))],t.yx),"Dinh Tai - Device developer",A.afd(null,"Sen",B.fH,B.f,null),!1,null)},
+$2(a,b){return new A.lV($.ai_(),"/home-page",new A.W2(),A.a([new A.Db(A.z(t.qK,t.pT))],t.yx),"Dinh Tai - Device developer",A.afd(null,"Sen",B.fH,B.f,null),!1,null)},
 $S:369}
 A.W2.prototype={
 $1(a){return A.amt(a)},
@@ -58821,7 +58821,7 @@ $S:6}
 A.CR.prototype={
 H(a){return A.ra(A.RC(B.LJ,new A.Vg(),null),null,null)}}
 A.Vg.prototype={
-$0(){A.alK($.c8(),"/",t.z)},
+$0(){A.alK($.c8(),"/home-page",t.z)},
 $S:0}
 A.Da.prototype={
 H(a){var s,r,q,p,o,n,m,l,k=null,j="MY PROJECTS DEMO",i="Sen",h="Work that I've done for past 2,5 years"
