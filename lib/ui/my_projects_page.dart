@@ -35,14 +35,13 @@ class MyProjectsPage extends StatelessWidget {
                   ),
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
-                      image: 'assets/images/news-app.png',
-                      description:
-                          'NewsApp project is a product that helps users regularly update news in the living area.',
+                      image: 'assets/images/sale-app-v1.png',
+                      description: 'Sales App',
                       linkGitHubProject:
-                          'https://github.com/dinhtai98/NewsAppAndShop_Proviver_Retrofit_StripePayment',
+                          'https://github.com/dinhtai98/ecommerce/tree/develop/ecommerce',
                       listTechnologies: [
                         'Flutter (Provider)',
-                        'Google Cloud Message'
+                        'Hive database',
                       ],
                     ),
                   )
@@ -57,17 +56,13 @@ class MyProjectsPage extends StatelessWidget {
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
                       image: 'assets/images/sale-app.png',
-                      description: 'Sales App',
+                      description: 'Sales App v2',
                       linkGitHubProject:
-                          'https://github.com/dinhtai98/ecommerce/tree/develop/ecommerce',
-                      linkGitHubProject2:
                           'https://github.com/dinhtai98/E_commerce_bloc/tree/develop/e_commerce',
                       listTechnologies: [
-                        'V1 - Flutter (Provider)',
-                        'V1 - Hive database',
-                        'V2 - Flutter (Bloc)',
-                        'V2 - Isar database',
-                        'V2 - Animation',
+                        'Flutter (Bloc)',
+                        'Isar database',
+                        'Animation',
                       ],
                     ),
                   ),
@@ -137,14 +132,13 @@ class MyProjectsPage extends StatelessWidget {
                   const SizedBox(height: 10),
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
-                      image: 'assets/images/news-app.png',
-                      description:
-                          'NewsApp project is a product that helps users regularly update news in the living area.',
+                      image: 'assets/images/sale-app-v1.png',
+                      description: 'Sales App',
                       linkGitHubProject:
-                          'https://github.com/dinhtai98/NewsAppAndShop_Proviver_Retrofit_StripePayment',
+                          'https://github.com/dinhtai98/ecommerce/tree/develop/ecommerce',
                       listTechnologies: [
                         'Flutter (Provider)',
-                        'Google Cloud Message'
+                        'Hive database',
                       ],
                     ),
                   )
@@ -157,17 +151,13 @@ class MyProjectsPage extends StatelessWidget {
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
                       image: 'assets/images/sale-app.png',
-                      description: 'Sales App',
+                      description: 'Sales App v2',
                       linkGitHubProject:
-                          'https://github.com/dinhtai98/ecommerce/tree/develop/ecommerce',
-                      linkGitHubProject2:
                           'https://github.com/dinhtai98/E_commerce_bloc/tree/develop/e_commerce',
                       listTechnologies: [
-                        'V1 - Flutter (Provider)',
-                        'V1 - Hive database',
-                        'V2 - Flutter (Bloc)',
-                        'V2 - Isar database',
-                        'V2 - Animation',
+                        'Flutter (Bloc)',
+                        'Isar database',
+                        'Animation',
                       ],
                     ),
                   ),
@@ -219,7 +209,6 @@ class _BuildDescriptionProject extends StatelessWidget {
   final String image;
   final String description;
   final String linkGitHubProject;
-  final String? linkGitHubProject2;
   final List<String> listTechnologies;
   const _BuildDescriptionProject({
     Key? key,
@@ -227,7 +216,6 @@ class _BuildDescriptionProject extends StatelessWidget {
     required this.description,
     required this.linkGitHubProject,
     required this.listTechnologies,
-    this.linkGitHubProject2,
   }) : super(key: key);
 
   @override
@@ -416,21 +404,6 @@ class _BuildDescriptionProject extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 10.sp),
-                      if (linkGitHubProject2 != null)
-                        InkWell(
-                          onTap: () async => await launchUrl(
-                              Uri.parse(linkGitHubProject),
-                              mode: LaunchMode.inAppWebView),
-                          child: Text(
-                            'Source v2',
-                            style:
-                                TextStyleUtils.regular(isMobile ? 12.sp : 6.sp)
-                                    .copyWith(
-                              color: ColorUtils.blue,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        )
                     ],
                   ),
                 ],

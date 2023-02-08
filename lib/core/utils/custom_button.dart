@@ -7,11 +7,13 @@ class CustomButton extends StatelessWidget {
   final Size? minimumSize;
   final Color? backgroundColor;
   final String name;
+  final Color? textColor;
   const CustomButton({
     super.key,
     required this.onPressed,
     this.minimumSize = const Size(100, 50),
     this.backgroundColor,
+    this.textColor,
     required this.name,
   });
 
@@ -35,7 +37,7 @@ class CustomButton extends StatelessWidget {
       child: Text(
         name,
         style: TextStyleUtils.regular(16)
-            .copyWith(color: ColorUtils.transparent07),
+            .copyWith(color: textColor ?? ColorUtils.transparent07),
       ),
     );
   }

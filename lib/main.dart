@@ -3,11 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:get/get.dart';
+import 'package:portfolio_website/core/utils/custom_scroll_behavior.dart';
 
-import 'package:portfolio_website/core/utils/navigation_utils.dart';
 import 'package:portfolio_website/global/locator.dart';
-import 'package:portfolio_website/global/my_router_observer.dart';
 import 'package:portfolio_website/global/router.dart';
 
 void main() {
@@ -31,12 +29,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, state) {
-        return GetMaterialApp(
+        return MaterialApp.router(
           title: 'Dinh Tai - Device developer',
-          navigatorKey: NavigationUtils.navigatorKey,
-          onGenerateRoute: (settings) => MyRouter.generateRoute(settings),
-          navigatorObservers: [MyRouteObserver()],
-          initialRoute: MyRouter.homePage,
+          scrollBehavior: MyCustomScrollBehavior(),
+          routerConfig: RouterConfiguration().router,
           theme: ThemeData(
             primarySwatch: Colors.blue,
             scaffoldBackgroundColor: Colors.white,
