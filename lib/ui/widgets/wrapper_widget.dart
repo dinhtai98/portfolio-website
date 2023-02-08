@@ -188,6 +188,6 @@ class _DownloadButtonState extends State<DownloadButton> {
 
 void downloadFile(url) {
   AnchorElement anchorElement = AnchorElement(href: url);
-  anchorElement.download = 'Vo Dinh Tai - CV';
+  anchorElement.download = 'Vo Dinh Tai - CV.pdf';
   anchorElement.click();
 }
