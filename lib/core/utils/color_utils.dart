@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ColorUtils {
   static Color fromString(String colorString) {
@@ -45,8 +44,8 @@ class ColorUtils {
     }
   }
 
-  static bool lightMode =
-      MediaQuery.of(Get.context!).platformBrightness == Brightness.light;
+  // static bool lightMode =
+  //     MediaQuery.of(Get.context!).platformBrightness == Brightness.light;
   static Color transparent = Colors.transparent;
   static Color white = const Color(0xFFFFFFFF);
   static Color black = const Color.fromARGB(255, 0, 0, 0);
@@ -56,6 +55,7 @@ class ColorUtils {
   static Color green = const Color.fromARGB(255, 43, 255, 0);
   static Color darkBlue = const Color(0xFF181823);
   static Color transparent07 = const Color.fromRGBO(255, 255, 255, 0.7);
-  static Color background =
-      lightMode ? const Color(0xFFFFFFFF) : const Color(0xff042a49);
+  // static Color background =
+  //     lightMode ? const Color(0xFFFFFFFF) : const Color(0xff042a49);
+  static Color background = const Color(0xFFFFFFFF);
 }

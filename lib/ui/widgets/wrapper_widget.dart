@@ -68,7 +68,22 @@ class _WrapperWidget extends StatelessWidget {
                     style: TextStyleUtils.regular(8.sp)
                         .copyWith(color: ColorUtils.white),
                   ),
-                )
+                ),
+                const SizedBox(height: 20),
+                CustomSlideTransition(
+                  offset: Tween<Offset>(
+                    begin: const Offset(1, 0.0),
+                    end: const Offset(0.0, 0.0),
+                  ),
+                  animationDuration: baseDuration + descriptionDuration * 2,
+                  child: CustomButton(
+                    name: 'CV PDF',
+                    onPressed: () =>
+                        downloadFile('assets/files/VoDinhTai-CV.pdf'),
+                    backgroundColor: ColorUtils.transparent,
+                    textColor: ColorUtils.green,
+                  ),
+                ),
               ],
             ),
           ),
@@ -133,11 +148,46 @@ class _WrapperWidget extends StatelessWidget {
                   style: TextStyleUtils.regular(12.sp)
                       .copyWith(color: ColorUtils.white),
                 ),
-              )
+              ),
+              const SizedBox(height: 20),
+              CustomSlideTransition(
+                offset: Tween<Offset>(
+                  begin: const Offset(1, 0.0),
+                  end: const Offset(0.0, 0.0),
+                ),
+                animationDuration: baseDuration + descriptionDuration * 2,
+                child: CustomButton(
+                  name: 'CV PDF',
+                  onPressed: () =>
+                      downloadFile('assets/files/VoDinhTai-CV.pdf'),
+                  backgroundColor: ColorUtils.transparent,
+                  textColor: ColorUtils.green,
+                ),
+              ),
             ],
           ),
         ],
       );
     }
   }
+}
+
+class DownloadButton extends StatefulWidget {
+  const DownloadButton({super.key});
+
+  @override
+  State<DownloadButton> createState() => _DownloadButtonState();
+}
+
+class _DownloadButtonState extends State<DownloadButton> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+void downloadFile(url) {
+  AnchorElement anchorElement = AnchorElement(href: url);
+  anchorElement.download = 'Vo Dinh Tai - CV';
+  anchorElement.click();
 }
