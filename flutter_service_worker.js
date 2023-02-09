@@ -8,7 +8,7 @@ const RESOURCES = {
 "assets/assets/fonts/Sen-Bold.ttf": "aee4d23fe0364c8c26d45cc0af3c8e99",
 "assets/assets/fonts/Sen-ExtraBold.ttf": "972534ccb4ee3367d819ed8a1a2d6847",
 "assets/assets/fonts/Sen-Regular.ttf": "782403861feb1b772dd57e0cd9ef2496",
-"assets/assets/images/avatar.jpg": "308fb65f9c54a3ca59609c4eba89fad4",
+"assets/assets/images/avatar.jpg": "93e49692c64cfdd2a74a9751de7b0583",
 "assets/assets/images/book.jpg": "7b01ff4c3450611a02a8127883cb8dea",
 "assets/assets/images/facebook.png": "ac65533df079a192ce511d1c1e5889d6",
 "assets/assets/images/github.png": "50472625bd666f1693cc4ee9fd6dfe50",
@@ -31,12 +31,12 @@ const RESOURCES = {
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "icons/icon-192.jpg": "96138a1ab0f1129dd86e0119b83e25b3",
 "icons/icon-512.jpg": "d23c2b27037b7c130bd166b5f293d9d1",
-"index.html": "f77ee45eb0873453f75a79e156ca27e8",
-"/": "f77ee45eb0873453f75a79e156ca27e8",
-"main.dart.js": "72b7c00c4103adde9973168021ae3c4a",
+"index.html": "dd9296d9594e9a46306242b1ddf1fafe",
+"/": "dd9296d9594e9a46306242b1ddf1fafe",
+"main.dart.js": "064fb36b6bcacf34ea86b8198388dc1b",
 "manifest.json": "4bb37e8c881eeec7511dad377cbd5174",
 "styles.css": "4e8ba353721e335dd411e08fdcb52f56",
-"version.json": "3da63cabb127287c230a5201a5158381"
+"version.json": "dad92d0b925256a6a701e2b737794add"
 };
 
 // The application shell files that are downloaded before a service worker can
