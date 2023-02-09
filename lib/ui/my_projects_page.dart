@@ -15,6 +15,7 @@ class MyProjectsPage extends StatelessWidget {
     // debugPrint('Build SkillSetPage');
     if (!locator<GlobalData>().isMobileSize) {
       return Container(
+        height: 230.sp,
         color: ColorUtils.black,
         padding: EdgeInsets.fromLTRB(15.w, 10.sp, 10.sp, 15.w),
         child: Row(

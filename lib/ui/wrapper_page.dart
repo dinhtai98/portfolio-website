@@ -1,4 +1,6 @@
-import 'dart:html';
+// ignore_for_file: avoid_web_libraries_in_flutter
+
+import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +8,7 @@ import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_slide_transition.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
 import 'package:portfolio_website/core/utils/custom_button.dart';
+import 'package:portfolio_website/core/utils/enum.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
 import 'package:portfolio_website/global/global_data.dart';
 import 'package:portfolio_website/global/locator.dart';
@@ -24,7 +27,8 @@ class _WrapperPageState extends State<WrapperPage> {
   @override
   Widget build(BuildContext context) {
     // debugPrint('Build Wrapper');
-    var isMobile = locator<GlobalData>().isMobileSize;
+    var globalData = locator<GlobalData>();
+    var isMobile = globalData.isMobileSize;
     return Stack(
       children: [
         SizedBox(
@@ -92,12 +96,22 @@ class _NavLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var globalData = locator<GlobalData>();
     return Row(
       children: [
         Expanded(
           child: CustomButton(
             onPressed: () {
-              //TODO
+              globalData.scrollTo(Pages.info);
+            },
+            name: 'Info',
+            backgroundColor: ColorUtils.darkBlue,
+          ),
+        ),
+        Expanded(
+          child: CustomButton(
+            onPressed: () {
+              globalData.scrollTo(Pages.workExperience);
             },
             name: 'Experience',
             backgroundColor: ColorUtils.darkBlue,
@@ -106,27 +120,27 @@ class _NavLink extends StatelessWidget {
         Expanded(
           child: CustomButton(
             onPressed: () {
-              //TODO
+              globalData.scrollTo(Pages.skillset);
             },
-            name: 'Work',
+            name: 'Skillset',
             backgroundColor: ColorUtils.darkBlue,
           ),
         ),
         Expanded(
           child: CustomButton(
             onPressed: () {
-              //TODO
+              globalData.scrollTo(Pages.myProjectsDemo);
             },
-            name: 'Photography',
+            name: 'Project Demo',
             backgroundColor: ColorUtils.darkBlue,
           ),
         ),
         Expanded(
           child: CustomButton(
             onPressed: () {
-              //TODO
+              globalData.scrollTo(Pages.aboutMe);
             },
-            name: 'Contact',
+            name: 'About me',
             backgroundColor: ColorUtils.blue,
           ),
         )
