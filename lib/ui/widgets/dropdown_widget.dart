@@ -8,20 +8,27 @@ class _DropdownWidget extends StatefulWidget {
 }
 
 class __DropdownWidgetState extends State<_DropdownWidget> {
-  var links = <String>['Experience', 'Work', 'Photography', 'Contact'];
-  String selectedLinks = 'Experience';
+  var links = <Pages>[
+    Pages.info,
+    Pages.workExperience,
+    Pages.skillset,
+    Pages.myProjectsDemo,
+    Pages.aboutMe,
+  ];
+  Pages selectedLinks = Pages.info;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
-      child: DropdownButton<String>(
-        items: links.map((String val) {
-          return DropdownMenuItem<String>(
+      child: DropdownButton<Pages>(
+        items: links.map((Pages val) {
+          return DropdownMenuItem<Pages>(
             value: val,
             child: _OnHover(
               builder: (isHovered) {
+                var title = EnumHelper.getDescription(EnumMap.enumPages, val);
                 return Container(
                     margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text(val));
+                    child: Text(title!));
               },
             ),
           );
@@ -31,14 +38,15 @@ class __DropdownWidgetState extends State<_DropdownWidget> {
           size: 30,
           color: ColorUtils.transparent07,
         ),
-        dropdownColor: ColorUtils.background,
+        dropdownColor: ColorUtils.darkBackground,
         style: TextStyleUtils.regular(16)
             .copyWith(color: ColorUtils.transparent07),
         value: selectedLinks,
         alignment: AlignmentDirectional.centerStart,
-        onChanged: (String? val) {
+        onChanged: (Pages? val) {
           setState(() {
             selectedLinks = val!;
+            locator<GlobalData>().scrollTo(val);
           });
         },
         borderRadius: const BorderRadius.all(
