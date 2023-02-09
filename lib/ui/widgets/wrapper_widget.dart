@@ -23,7 +23,7 @@ class _WrapperWidget extends StatelessWidget {
                 width: 160.sp,
                 height: 160.sp,
                 fit: BoxFit.fill,
-                opacity: const AlwaysStoppedAnimation(.9),
+                opacity: const AlwaysStoppedAnimation(.8),
               ),
             ),
           ),
@@ -104,7 +104,7 @@ class _WrapperWidget extends StatelessWidget {
               child: Image.asset(
                 'assets/images/avatar.jpg',
                 fit: BoxFit.cover,
-                opacity: const AlwaysStoppedAnimation(.9),
+                opacity: const AlwaysStoppedAnimation(.8),
               ),
             ),
           ),
