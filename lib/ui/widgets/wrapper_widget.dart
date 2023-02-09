@@ -78,8 +78,8 @@ class _WrapperWidget extends StatelessWidget {
                   animationDuration: baseDuration + descriptionDuration * 2,
                   child: CustomButton(
                     name: 'CV PDF',
-                    onPressed: () =>
-                        downloadFile('assets/files/VoDinhTai-CV.pdf'),
+                    onPressed: () => downloadFile(
+                        'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
                     backgroundColor: ColorUtils.transparent,
                     textColor: ColorUtils.green,
                   ),
@@ -158,8 +158,8 @@ class _WrapperWidget extends StatelessWidget {
                 animationDuration: baseDuration + descriptionDuration * 2,
                 child: CustomButton(
                   name: 'CV PDF',
-                  onPressed: () =>
-                      downloadFile('assets/files/VoDinhTai-CV.pdf'),
+                  onPressed: () => downloadFile(
+                      'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
                   backgroundColor: ColorUtils.transparent,
                   textColor: ColorUtils.green,
                 ),
@@ -187,8 +187,5 @@ class _DownloadButtonState extends State<DownloadButton> {
 }
 
 void downloadFile(url) {
-  // html.AnchorElement anchorElement = html.AnchorElement(href: url);
-  // anchorElement.download = 'VoDinhTai-CV.pdf';
-  // anchorElement.click();
   html.window.open(url, "_blank");
 }
