@@ -84,7 +84,6 @@ class SkillSetPage extends StatelessWidget {
                         'Windows',
                         'Mobile (Android/IOS)',
                         'Web',
-                        'Bitbucket'
                       ],
                       delay: Duration(milliseconds: 400),
                     ),
