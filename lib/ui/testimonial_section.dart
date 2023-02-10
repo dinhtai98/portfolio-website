@@ -1,10 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
+import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_animation_builder.dart';
+import 'package:portfolio_website/core/utils/responsive.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
-import 'package:portfolio_website/global/global_data.dart';
-import 'package:portfolio_website/global/locator.dart';
 
 class TestimonialSectionPage extends StatelessWidget {
   const TestimonialSectionPage({super.key});
@@ -12,32 +12,43 @@ class TestimonialSectionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // debugPrint('Build TestimonialSectionPage');
-    if (!locator<GlobalData>().isMobileSize) {
-      return Container(
-        height: 220.sp,
-        color: ColorUtils.black,
-        padding: EdgeInsets.fromLTRB(15.w, 15.sp, 10.sp, 15.w),
-        child: Row(
-          children: const [
-            Expanded(child: _BuildTitleAndDescription()),
-            Expanded(child: _BuildListTestimonial()),
-          ],
+    return Container(
+      color: ColorUtils.black,
+      child: Responsive(
+        mobile: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: const [
+              _BuildTitleAndDescription(),
+              SizedBox(height: 20),
+              _BuildListTestimonial(),
+            ],
+          ),
         ),
-      );
-    } else {
-      return Container(
-        height: 750.sp,
-        color: ColorUtils.black,
-        padding: EdgeInsets.fromLTRB(15.w, 15.sp, 10.sp, 15.w),
-        child: Column(
-          children: const [
-            _BuildTitleAndDescription(),
-            SizedBox(height: 20),
-            Expanded(child: _BuildListTestimonial()),
-          ],
+        tablet: Container(
+          height: 700,
+          color: ColorUtils.black,
+          padding: const EdgeInsets.fromLTRB(30, 15, 30, 15),
+          child: Row(
+            children: const [
+              Expanded(child: _BuildTitleAndDescription()),
+              Expanded(child: _BuildListTestimonial()),
+            ],
+          ),
         ),
-      );
-    }
+        desktop: Container(
+          height: 700,
+          color: ColorUtils.black,
+          padding: const EdgeInsets.fromLTRB(50, 15, 50, 15),
+          child: Row(
+            children: const [
+              Expanded(child: _BuildTitleAndDescription()),
+              Expanded(child: _BuildListTestimonial()),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -46,7 +57,6 @@ class _BuildListTestimonial extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isMobile = locator<GlobalData>().isMobileSize;
     var models = [
       TestimonialModel(
         description: 'data',
@@ -61,16 +71,17 @@ class _BuildListTestimonial extends StatelessWidget {
         image: 'assets/images/testimonial_2.jpg',
       ),
     ];
-    if (isMobile) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          ...models.map((model) => CustomAnimatedBuilder(
+    return Responsive(
+        mobile: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ...models.map(
+              (model) => CustomAnimatedBuilder(
                 child: Container(
                   decoration: BoxDecoration(
                       border: Border.all(color: ColorUtils.white)),
-                  margin: EdgeInsets.symmetric(vertical: 1.sp),
-                  height: 300.sp,
+                  margin: const EdgeInsets.symmetric(vertical: 5),
+                  height: 600,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -96,7 +107,8 @@ class _BuildListTestimonial extends StatelessWidget {
                                 flex: 5,
                                 child: Text(
                                   model.description,
-                                  style: TextStyleUtils.bold(12.sp)
+                                  style: TextStyleUtils.bold(
+                                          Constants.descriptionSize)
                                       .copyWith(color: ColorUtils.white),
                                 ),
                               ),
@@ -109,13 +121,15 @@ class _BuildListTestimonial extends StatelessWidget {
                                   children: [
                                     Text(
                                       model.name,
-                                      style: TextStyleUtils.bold(12.sp)
+                                      style: TextStyleUtils.bold(
+                                              Constants.descriptionSize)
                                           .copyWith(
                                               color: ColorUtils.transparent07),
                                     ),
                                     Text(
                                       model.positionOf,
-                                      style: TextStyleUtils.regular(12.sp)
+                                      style: TextStyleUtils.regular(
+                                              Constants.descriptionSize)
                                           .copyWith(color: ColorUtils.white),
                                     )
                                   ],
@@ -128,76 +142,148 @@ class _BuildListTestimonial extends StatelessWidget {
                     ],
                   ),
                 ),
-              ))
-        ],
-      );
-    } else {
-      return ListView.builder(
-        itemBuilder: (context, index) {
-          var model = models[index];
-          return CustomAnimatedBuilder(
-            child: Container(
-              decoration:
-                  BoxDecoration(border: Border.all(color: ColorUtils.white)),
-              margin: EdgeInsets.symmetric(vertical: 1.sp),
-              height: 170.sp,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 4,
-                    child: Center(
-                      child: Image.asset(
-                        model.image,
-                        width: double.infinity,
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 3,
-                    child: Padding(
-                      padding: EdgeInsets.all(2.sp),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              model.description,
-                              style: TextStyleUtils.bold(8.sp)
-                                  .copyWith(color: ColorUtils.white),
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  model.name,
-                                  style: TextStyleUtils.bold(6.sp).copyWith(
-                                      color: ColorUtils.transparent07),
-                                ),
-                                Text(
-                                  model.positionOf,
-                                  style: TextStyleUtils.regular(6.sp)
-                                      .copyWith(color: ColorUtils.white),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
               ),
-            ),
-          );
-        },
-        itemCount: models.length,
-      );
-    }
+            )
+          ],
+        ),
+        tablet: ListView.builder(
+          itemBuilder: (context, index) {
+            var model = models[index];
+            return CustomAnimatedBuilder(
+              child: Container(
+                decoration:
+                    BoxDecoration(border: Border.all(color: ColorUtils.white)),
+                margin: const EdgeInsets.symmetric(vertical: 1),
+                height: 500,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 4,
+                      child: Center(
+                        child: Image.asset(
+                          model.image,
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.all(2),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                model.description,
+                                style: TextStyleUtils.bold(
+                                        Constants.descriptionSize)
+                                    .copyWith(color: ColorUtils.white),
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    model.name,
+                                    style: TextStyleUtils.bold(
+                                            Constants.subheaderSize)
+                                        .copyWith(
+                                            color: ColorUtils.transparent07),
+                                  ),
+                                  Text(
+                                    model.positionOf,
+                                    style: TextStyleUtils.regular(
+                                            Constants.subheaderSize)
+                                        .copyWith(color: ColorUtils.white),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          itemCount: models.length,
+        ),
+        desktop: ListView.builder(
+          itemBuilder: (context, index) {
+            var model = models[index];
+            return CustomAnimatedBuilder(
+              child: Container(
+                decoration:
+                    BoxDecoration(border: Border.all(color: ColorUtils.white)),
+                margin: const EdgeInsets.symmetric(vertical: 1),
+                height: 500,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 4,
+                      child: Center(
+                        child: Image.asset(
+                          model.image,
+                          width: double.infinity,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.all(2),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                model.description,
+                                style: TextStyleUtils.bold(
+                                        Constants.descriptionSize)
+                                    .copyWith(color: ColorUtils.white),
+                              ),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    model.name,
+                                    style: TextStyleUtils.bold(
+                                            Constants.subheaderSize)
+                                        .copyWith(
+                                            color: ColorUtils.transparent07),
+                                  ),
+                                  Text(
+                                    model.positionOf,
+                                    style: TextStyleUtils.regular(
+                                            Constants.subheaderSize)
+                                        .copyWith(color: ColorUtils.white),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+          itemCount: models.length,
+        ));
   }
 }
 
@@ -206,22 +292,21 @@ class _BuildTitleAndDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isMobile = locator<GlobalData>().isMobileSize;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        AutoSizeText(
           'This is what people say \nabout me',
-          style: TextStyleUtils.bold(isMobile ? 16.sp : 10.sp)
+          style: TextStyleUtils.bold(Constants.headerSize)
               .copyWith(color: ColorUtils.white),
           maxLines: 2,
         ),
-        SizedBox(height: 10.sp),
+        const SizedBox(height: 10),
         Text(
           'Here are a few lines from people who I have worked with over the past 2+ years in my application development career.',
-          style: TextStyleUtils.regular(isMobile ? 12.sp : 7.sp)
+          style: TextStyleUtils.regular(Constants.descriptionSize)
               .copyWith(color: ColorUtils.transparent07),
-          maxLines: 3,
+          maxLines: 4,
           overflow: TextOverflow.fade,
         ),
       ],

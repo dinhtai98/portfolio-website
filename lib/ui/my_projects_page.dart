@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_website/core/utils/color_utils.dart';
+import 'package:portfolio_website/core/utils/constant.dart';
 import 'package:portfolio_website/core/utils/custom_animation_builder.dart';
+import 'package:portfolio_website/core/utils/responsive.dart';
 import 'package:portfolio_website/core/utils/text_style_utils.dart';
-import 'package:portfolio_website/global/global_data.dart';
-import 'package:portfolio_website/global/locator.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MyProjectsPage extends StatelessWidget {
@@ -13,27 +12,29 @@ class MyProjectsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // debugPrint('Build SkillSetPage');
-    if (!locator<GlobalData>().isMobileSize) {
-      return Container(
-        height: 230.sp,
-        color: ColorUtils.black,
-        padding: EdgeInsets.fromLTRB(15.w, 10.sp, 10.sp, 15.w),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
+    return Container(
+      color: ColorUtils.black,
+      child: Responsive(
+        mobile: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'MY PROJECTS DEMO',
-                    style: TextStyleUtils.regular(6.sp)
+                    'MY DEMO PROJECTS',
+                    style: TextStyleUtils.regular(Constants.subheaderSize)
                         .copyWith(color: ColorUtils.transparent07),
                   ),
+                  const SizedBox(height: 10),
                   Text(
-                    "Work that I've done for past 2,5 years",
-                    style: TextStyleUtils.bold(10.sp)
+                    "Work that I've done for past 2.5 years",
+                    style: TextStyleUtils.bold(Constants.subheaderSize)
                         .copyWith(color: ColorUtils.white),
                   ),
+                  const SizedBox(height: 10),
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
                       image: 'assets/images/sale-app-v1.png',
@@ -48,11 +49,8 @@ class MyProjectsPage extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-            SizedBox(width: 2.sp),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              const SizedBox(height: 20),
+              Column(
                 children: [
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
@@ -82,7 +80,7 @@ class MyProjectsPage extends StatelessWidget {
                           ),
                         ),
                         minimumSize:
-                            MaterialStateProperty.all<Size>(Size(20.sp, 15.sp)),
+                            MaterialStateProperty.all<Size>(const Size(30, 35)),
                         backgroundColor: MaterialStateProperty.all<Color>(
                             isHover ? ColorUtils.blue : ColorUtils.transparent),
                         overlayColor: MaterialStateProperty.resolveWith<Color?>(
@@ -96,38 +94,33 @@ class MyProjectsPage extends StatelessWidget {
                       ),
                       child: Text(
                         'Github Link',
-                        style: TextStyleUtils.regular(6.5.sp)
+                        style: TextStyleUtils.regular(Constants.descriptionSize)
                             .copyWith(color: ColorUtils.transparent07),
                       ),
                     ),
                   ),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
-      );
-    } else {
-      return Container(
-        height: 1000.sp,
-        color: ColorUtils.black,
-        padding: EdgeInsets.fromLTRB(15.w, 10.sp, 10.sp, 15.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
+        tablet: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'MY PROJECTS DEMO',
-                    style: TextStyleUtils.regular(14.sp)
+                    'MY DEMO PROJECTS',
+                    style: TextStyleUtils.regular(Constants.headerSize)
                         .copyWith(color: ColorUtils.transparent07),
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    "Work that I've done for past 2,5 years",
-                    style: TextStyleUtils.bold(16.sp)
+                    "Work that I've done for past 2.5 years",
+                    style: TextStyleUtils.bold(Constants.headerSize)
                         .copyWith(color: ColorUtils.white),
                   ),
                   const SizedBox(height: 10),
@@ -145,9 +138,8 @@ class MyProjectsPage extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-            Expanded(
-              child: Column(
+              const SizedBox(height: 20),
+              Column(
                 children: [
                   const CustomAnimatedBuilder(
                     child: _BuildDescriptionProject(
@@ -177,7 +169,7 @@ class MyProjectsPage extends StatelessWidget {
                           ),
                         ),
                         minimumSize:
-                            MaterialStateProperty.all<Size>(Size(30.sp, 35.sp)),
+                            MaterialStateProperty.all<Size>(const Size(30, 45)),
                         backgroundColor: MaterialStateProperty.all<Color>(
                             isHover ? ColorUtils.blue : ColorUtils.transparent),
                         overlayColor: MaterialStateProperty.resolveWith<Color?>(
@@ -191,18 +183,115 @@ class MyProjectsPage extends StatelessWidget {
                       ),
                       child: Text(
                         'Github Link',
-                        style: TextStyleUtils.regular(12.sp)
+                        style: TextStyleUtils.regular(Constants.subheaderSize)
                             .copyWith(color: ColorUtils.transparent07),
                       ),
                     ),
                   ),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
-      );
-    }
+        desktop: Container(
+          height: 900,
+          color: ColorUtils.black,
+          padding: const EdgeInsets.fromLTRB(50, 10, 10, 50),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'MY DEMO PROJECTS',
+                      style: TextStyleUtils.regular(Constants.headerSize)
+                          .copyWith(color: ColorUtils.transparent07),
+                    ),
+                    Text(
+                      "Work that I've done for past 2.5 years",
+                      style: TextStyleUtils.bold(Constants.subheaderSize)
+                          .copyWith(color: ColorUtils.white),
+                    ),
+                    const SizedBox(height: 50),
+                    const CustomAnimatedBuilder(
+                      child: _BuildDescriptionProject(
+                        image: 'assets/images/sale-app-v1.png',
+                        description: 'Sales App',
+                        linkGitHubProject:
+                            'https://github.com/dinhtai98/ecommerce/tree/develop/ecommerce',
+                        listTechnologies: [
+                          'Flutter (Provider)',
+                          'Hive database',
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const CustomAnimatedBuilder(
+                      child: _BuildDescriptionProject(
+                        image: 'assets/images/sale-app.png',
+                        description: 'Sales App v2',
+                        linkGitHubProject:
+                            'https://github.com/dinhtai98/E_commerce_bloc/tree/develop/e_commerce',
+                        listTechnologies: [
+                          'Flutter (Bloc)',
+                          'Isar database',
+                          'Animation',
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    _HoverContainer(
+                      builder: (isHover) => ElevatedButton(
+                        onPressed: () async => await launchUrl(
+                            Uri.parse('https://github.com/dinhtai98'),
+                            mode: LaunchMode.inAppWebView),
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.zero,
+                              side: BorderSide(color: ColorUtils.blue),
+                            ),
+                          ),
+                          minimumSize: MaterialStateProperty.all<Size>(
+                              const Size(100, 70)),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              isHover
+                                  ? ColorUtils.blue
+                                  : ColorUtils.transparent),
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color?>(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.hovered)) {
+                                return ColorUtils.transparent;
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
+                        child: Text(
+                          'Github Link',
+                          style: TextStyleUtils.regular(Constants.subheaderSize)
+                              .copyWith(color: ColorUtils.transparent07),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 
@@ -221,11 +310,35 @@ class _BuildDescriptionProject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isMobile = locator<GlobalData>().isMobileSize;
+    List infoOfProject = [
+      Text(
+        'My responsibilities:',
+        style: TextStyleUtils.regular(Constants.subheaderSize)
+            .copyWith(color: ColorUtils.white),
+      ),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ...<String>[
+            'Analysis and design',
+            'Development',
+            'Review code',
+            'Optimize code',
+            'Bug Fixing'
+          ].map(
+            (e) => Text(
+              '• $e',
+              style: TextStyleUtils.regular(Constants.descriptionSize)
+                  .copyWith(color: ColorUtils.transparent07),
+            ),
+          ),
+        ],
+      ),
+    ];
     return _HoverContainer(builder: (_) {
       return Container(
         color: ColorUtils.darkBlue,
-        height: isMobile ? 400.sp : 170.sp,
+        height: 650,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -239,127 +352,37 @@ class _BuildDescriptionProject extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (isMobile)
+              child: Responsive(
+                mobile: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'My responsibilities:',
-                              style: TextStyleUtils.regular(14.sp)
-                                  .copyWith(color: ColorUtils.white),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ...<String>[
-                                  'Analysis and design',
-                                  'Development',
-                                  'Review code',
-                                  'Optimize code',
-                                  'Bug Fixing'
-                                ].map(
-                                  (e) => Text(
-                                    '• $e',
-                                    style: TextStyleUtils.regular(12.sp)
-                                        .copyWith(
-                                            color: ColorUtils.transparent07),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
+                          children: [...infoOfProject],
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Technologies used:',
-                              style: TextStyleUtils.regular(14.sp)
+                              style: TextStyleUtils.regular(
+                                      Constants.subheaderSize)
                                   .copyWith(color: ColorUtils.white),
                             ),
                             Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 2.sp, horizontal: 4.sp),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 2, horizontal: 4),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   ...listTechnologies.map(
                                     (e) => Text(
                                       '• $e',
-                                      style: TextStyleUtils.regular(12.sp)
-                                          .copyWith(
-                                              color: ColorUtils.transparent07),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    )
-                  else
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'My responsibilities:',
-                              style: TextStyleUtils.regular(7.sp)
-                                  .copyWith(color: ColorUtils.white),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 2.sp, horizontal: 4.sp),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  ...<String>[
-                                    'Analysis and design',
-                                    'Development',
-                                    'Review code',
-                                    'Optimize code',
-                                    'Bug Fixing'
-                                  ].map(
-                                    (e) => Text(
-                                      '• $e',
-                                      style: TextStyleUtils.regular(6.sp)
-                                          .copyWith(
-                                              color: ColorUtils.transparent07),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Technologies used:',
-                              style: TextStyleUtils.regular(7.sp)
-                                  .copyWith(color: ColorUtils.white),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 2.sp, horizontal: 4.sp),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  ...listTechnologies.map(
-                                    (e) => Text(
-                                      '• $e',
-                                      style: TextStyleUtils.regular(6.sp)
+                                      style: TextStyleUtils.regular(
+                                              Constants.descriptionSize)
                                           .copyWith(
                                               color: ColorUtils.transparent07),
                                     ),
@@ -371,45 +394,210 @@ class _BuildDescriptionProject extends StatelessWidget {
                         ),
                       ],
                     ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Description: ',
-                        style: TextStyleUtils.regular(isMobile ? 14.sp : 7.sp)
-                            .copyWith(color: ColorUtils.white),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 2.sp),
-                        child: Text(
-                          description,
-                          style: TextStyleUtils.regular(isMobile ? 12.sp : 6.sp)
-                              .copyWith(color: ColorUtils.transparent07),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Description: ',
+                          style: TextStyleUtils.regular(Constants.subheaderSize)
+                              .copyWith(color: ColorUtils.white),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 2),
+                          child: Text(
+                            description,
+                            style: TextStyleUtils.regular(
+                                    Constants.descriptionSize)
+                                .copyWith(color: ColorUtils.transparent07),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: () async => await launchUrl(
+                              Uri.parse(linkGitHubProject),
+                              mode: LaunchMode.inAppWebView),
+                          child: Text(
+                            'Source',
+                            style:
+                                TextStyleUtils.regular(Constants.subheaderSize)
+                                    .copyWith(
+                              color: ColorUtils.blue,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                      ],
+                    ),
+                  ],
+                ),
+                tablet: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [...infoOfProject],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Technologies used:',
+                              style: TextStyleUtils.regular(
+                                      Constants.subheaderSize)
+                                  .copyWith(color: ColorUtils.white),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 2, horizontal: 4),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ...listTechnologies.map(
+                                    (e) => Text(
+                                      '• $e',
+                                      style: TextStyleUtils.regular(
+                                              Constants.descriptionSize)
+                                          .copyWith(
+                                              color: ColorUtils.transparent07),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Description: ',
+                            style:
+                                TextStyleUtils.regular(Constants.subheaderSize)
+                                    .copyWith(color: ColorUtils.white),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 2),
+                            child: Text(
+                              description,
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      InkWell(
+                    ),
+                    Center(
+                      child: InkWell(
                         onTap: () async => await launchUrl(
                             Uri.parse(linkGitHubProject),
                             mode: LaunchMode.inAppWebView),
                         child: Text(
                           'Source',
-                          style: TextStyleUtils.regular(isMobile ? 12.sp : 6.sp)
+                          style: TextStyleUtils.regular(Constants.subheaderSize)
                               .copyWith(
                             color: ColorUtils.blue,
                             decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
-                      SizedBox(width: 10.sp),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
+                desktop: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [...infoOfProject],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Technologies used:',
+                              style: TextStyleUtils.regular(
+                                      Constants.subheaderSize)
+                                  .copyWith(color: ColorUtils.white),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 2, horizontal: 4),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ...listTechnologies.map(
+                                    (e) => Text(
+                                      '• $e',
+                                      style: TextStyleUtils.regular(
+                                              Constants.descriptionSize)
+                                          .copyWith(
+                                              color: ColorUtils.transparent07),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Description: ',
+                            style:
+                                TextStyleUtils.regular(Constants.subheaderSize)
+                                    .copyWith(color: ColorUtils.white),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 2),
+                            child: Text(
+                              description,
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: InkWell(
+                        onTap: () async => await launchUrl(
+                            Uri.parse(linkGitHubProject),
+                            mode: LaunchMode.inAppWebView),
+                        child: Text(
+                          'Source',
+                          style: TextStyleUtils.regular(Constants.subheaderSize)
+                              .copyWith(
+                            color: ColorUtils.blue,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )
+            ),
           ],
         ),
       );

@@ -3,7 +3,6 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class GlobalData {
   GlobalData();
-  bool isMobileSize = false;
   ItemScrollController scrollController = ItemScrollController();
 
   void scrollTo(Pages pages) {
@@ -20,7 +19,7 @@ class GlobalData {
         scrollController.scrollTo(
             index: 3, duration: const Duration(seconds: 1));
         break;
-      case Pages.myProjectsDemo:
+      case Pages.myDemoProjects:
         scrollController.scrollTo(
             index: 4, duration: const Duration(seconds: 1));
         break;
