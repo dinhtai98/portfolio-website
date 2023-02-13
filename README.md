@@ -1,16 +1,7 @@
-# portfolio_website
+# Dinh Tai- Mobile Developer
+Based in Ho Chi Minh.
+I'm a software developer having 2 years of experience in creating single-page applications using technologies such as Flutter, WPF
 
-A new Flutter project.
+## View
+![image](https://user-images.githubusercontent.com/54591175/218356226-0e2ccd09-bffb-4dfa-9983-0cdf2c238617.png)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
