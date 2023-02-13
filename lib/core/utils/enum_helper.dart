@@ -39,7 +39,7 @@ class EnumMap {
   static Map<Pages, MyEnum> enumPages = {
     Pages.info: MyEnum(description: 'Info'),
     Pages.aboutMe: MyEnum(description: 'About Me'),
-    Pages.myProjectsDemo: MyEnum(description: 'My Projects Demo'),
+    Pages.myDemoProjects: MyEnum(description: 'My Demo Projects'),
     Pages.philosophyAndValues: MyEnum(description: 'Philosophy And Values'),
     Pages.skillset: MyEnum(description: 'Skillset'),
     Pages.testimonialSection: MyEnum(description: 'Testimonial Section'),

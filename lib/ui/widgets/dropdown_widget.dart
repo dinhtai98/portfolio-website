@@ -1,4 +1,4 @@
-part of '../wrapper_page.dart';
+part of '../../home_page.dart';
 
 class _DropdownWidget extends StatefulWidget {
   const _DropdownWidget();
@@ -12,46 +12,49 @@ class __DropdownWidgetState extends State<_DropdownWidget> {
     Pages.info,
     Pages.workExperience,
     Pages.skillset,
-    Pages.myProjectsDemo,
+    Pages.myDemoProjects,
     Pages.aboutMe,
   ];
   Pages selectedLinks = Pages.info;
+  final CustomPopupMenuController _controller = CustomPopupMenuController();
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonHideUnderline(
-      child: DropdownButton<Pages>(
-        items: links.map((Pages val) {
-          return DropdownMenuItem<Pages>(
-            value: val,
-            child: _OnHover(
-              builder: (isHovered) {
-                var title = EnumHelper.getDescription(EnumMap.enumPages, val);
-                return Container(
-                    margin: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Text(title!));
-              },
-            ),
-          );
-        }).toList(),
-        icon: Icon(
-          Icons.menu,
-          size: 30,
-          color: ColorUtils.transparent07,
-        ),
-        dropdownColor: ColorUtils.darkBackground,
-        style: TextStyleUtils.regular(16)
-            .copyWith(color: ColorUtils.transparent07),
-        value: selectedLinks,
-        alignment: AlignmentDirectional.centerStart,
-        onChanged: (Pages? val) {
-          setState(() {
-            selectedLinks = val!;
-            locator<GlobalData>().scrollTo(val);
-          });
-        },
-        borderRadius: const BorderRadius.all(
-          Radius.circular(15),
-        ),
+    return CustomPopupMenu(
+      menuBuilder: () {
+        return Container(
+          decoration: BoxDecoration(
+              border: Border.all(color: ColorUtils.darkBackground),
+              borderRadius: BorderRadius.circular(15),
+              color: ColorUtils.darkBackground),
+          child: Column(
+            children: [
+              ...links.map((e) {
+                var title = EnumHelper.getDescription(EnumMap.enumPages, e);
+                return InkWell(
+                  onTap: () {
+                    _controller.hideMenu();
+                    locator<GlobalData>().scrollTo(e);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.all(10),
+                    child: Text(
+                      title!,
+                      style: TextStyleUtils.regular(16)
+                          .copyWith(color: ColorUtils.transparent07),
+                    ),
+                  ),
+                );
+              })
+            ],
+          ),
+        );
+      },
+      pressType: PressType.singleClick,
+      verticalMargin: 0,
+      controller: _controller,
+      child: Icon(
+        Icons.menu,
+        color: ColorUtils.transparent07,
       ),
     );
   }

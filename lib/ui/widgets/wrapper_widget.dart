@@ -7,29 +7,29 @@ class _WrapperWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var baseDuration = const Duration(milliseconds: 600);
     var descriptionDuration = const Duration(milliseconds: 300);
-    if (!locator<GlobalData>().isMobileSize) {
-      return Stack(
-        children: [
-          CustomSlideTransition(
-            offset: Tween<Offset>(
-              begin: const Offset(-0.3, 0.0),
-              end: const Offset(0.0, 0.0),
-            ),
-            animationDuration: baseDuration,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Image.asset(
-                'assets/images/avatar.jpg',
-                width: 160.sp,
-                height: 160.sp,
-                fit: BoxFit.fill,
-                opacity: const AlwaysStoppedAnimation(.8),
+    return Responsive(
+      mobile: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            CustomSlideTransition(
+              offset: Tween<Offset>(
+                begin: const Offset(-0.3, 0.0),
+                end: const Offset(0.0, 0.0),
+              ),
+              animationDuration: baseDuration,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/avatar.jpg',
+                  fit: BoxFit.cover,
+                  opacity: const AlwaysStoppedAnimation(.8),
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 150.w, top: 40.sp),
-            child: Column(
+            const SizedBox(height: 20),
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSlideTransition(
@@ -39,8 +39,8 @@ class _WrapperWidget extends StatelessWidget {
                   ),
                   animationDuration: baseDuration,
                   child: Text(
-                    "I'm Dinh Tai. \nA Device Developer",
-                    style: TextStyleUtils.bold(16.sp)
+                    "I'm Dinh Tai. \nA Mobile Developer",
+                    style: TextStyleUtils.bold(40)
                         .copyWith(color: ColorUtils.white),
                   ),
                 ),
@@ -52,7 +52,7 @@ class _WrapperWidget extends StatelessWidget {
                   animationDuration: baseDuration,
                   child: Text(
                     'based in Ho Chi Minh.',
-                    style: TextStyleUtils.bold(16.sp)
+                    style: TextStyleUtils.bold(40)
                         .copyWith(color: ColorUtils.transparent07),
                   ),
                 ),
@@ -64,8 +64,8 @@ class _WrapperWidget extends StatelessWidget {
                   ),
                   animationDuration: baseDuration + descriptionDuration,
                   child: Text(
-                    "I'm a software developer having 2 years experience in creating single-page applications using technologies such as Flutter, WPF. I'm your guy",
-                    style: TextStyleUtils.regular(8.sp)
+                    "I'm a software developer having 2 years of experience in creating single-page applications using technologies such as Flutter, WPF. I'm your guy",
+                    style: TextStyleUtils.regular(20)
                         .copyWith(color: ColorUtils.white),
                   ),
                 ),
@@ -86,89 +86,178 @@ class _WrapperWidget extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      );
-    } else {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          CustomSlideTransition(
-            offset: Tween<Offset>(
-              begin: const Offset(-0.3, 0.0),
-              end: const Offset(0.0, 0.0),
-            ),
-            animationDuration: baseDuration,
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Image.asset(
-                'assets/images/avatar.jpg',
-                fit: BoxFit.cover,
-                opacity: const AlwaysStoppedAnimation(.8),
+          ],
+        ),
+      ),
+      tablet: Padding(
+        padding: const EdgeInsets.all(30),
+        child: Stack(
+          children: [
+            CustomSlideTransition(
+              offset: Tween<Offset>(
+                begin: const Offset(-0.3, 0.0),
+                end: const Offset(0.0, 0.0),
+              ),
+              animationDuration: baseDuration,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/avatar.jpg',
+                  width: 680,
+                  height: 680,
+                  fit: BoxFit.fill,
+                  opacity: const AlwaysStoppedAnimation(.8),
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CustomSlideTransition(
-                offset: Tween<Offset>(
-                  begin: const Offset(1, 0.0),
-                  end: const Offset(0.0, 0.0),
-                ),
-                animationDuration: baseDuration,
-                child: Text(
-                  "I'm Dinh Tai. \nA Device Developer",
-                  style: TextStyleUtils.bold(16.sp)
-                      .copyWith(color: ColorUtils.white),
+            Container(
+              margin: const EdgeInsets.only(left: 650, top: 60),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration,
+                    child: Text(
+                      "I'm Dinh Tai. \nA Mobile Developer",
+                      style: TextStyleUtils.bold(50)
+                          .copyWith(color: ColorUtils.white),
+                    ),
+                  ),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration,
+                    child: Text(
+                      'based in Ho Chi Minh.',
+                      style: TextStyleUtils.bold(50)
+                          .copyWith(color: ColorUtils.transparent07),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration + descriptionDuration,
+                    child: Text(
+                      "I'm a software developer having 2 years of experience in creating single-page applications using technologies such as Flutter, WPF. I'm your guy",
+                      style: TextStyleUtils.regular(30)
+                          .copyWith(color: ColorUtils.white),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration + descriptionDuration * 2,
+                    child: CustomButton(
+                      name: 'CV PDF',
+                      onPressed: () => downloadFile(
+                          'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
+                      backgroundColor: ColorUtils.transparent,
+                      textColor: ColorUtils.green,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      desktop: Padding(
+        padding: const EdgeInsets.all(50),
+        child: Stack(
+          children: [
+            CustomSlideTransition(
+              offset: Tween<Offset>(
+                begin: const Offset(-0.3, 0.0),
+                end: const Offset(0.0, 0.0),
+              ),
+              animationDuration: baseDuration,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Image.asset(
+                  'assets/images/avatar.jpg',
+                  width: 700,
+                  height: 700,
+                  fit: BoxFit.fill,
+                  opacity: const AlwaysStoppedAnimation(.8),
                 ),
               ),
-              CustomSlideTransition(
-                offset: Tween<Offset>(
-                  begin: const Offset(1, 0.0),
-                  end: const Offset(0.0, 0.0),
-                ),
-                animationDuration: baseDuration,
-                child: Text(
-                  'based in Ho Chi Minh.',
-                  style: TextStyleUtils.bold(16.sp)
-                      .copyWith(color: ColorUtils.transparent07),
-                ),
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 650, top: 60),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration,
+                    child: Text(
+                      "I'm Dinh Tai. \nA Mobile Developer",
+                      style: TextStyleUtils.bold(70)
+                          .copyWith(color: ColorUtils.white),
+                    ),
+                  ),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration,
+                    child: Text(
+                      'based in Ho Chi Minh.',
+                      style: TextStyleUtils.bold(70)
+                          .copyWith(color: ColorUtils.transparent07),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration + descriptionDuration,
+                    child: Text(
+                      "I'm a software developer having 2 years of experience in creating single-page applications using technologies such as Flutter, WPF. I'm your guy",
+                      style: TextStyleUtils.regular(40)
+                          .copyWith(color: ColorUtils.white),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  CustomSlideTransition(
+                    offset: Tween<Offset>(
+                      begin: const Offset(1, 0.0),
+                      end: const Offset(0.0, 0.0),
+                    ),
+                    animationDuration: baseDuration + descriptionDuration * 2,
+                    child: CustomButton(
+                      name: 'CV PDF',
+                      onPressed: () => downloadFile(
+                          'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
+                      backgroundColor: ColorUtils.transparent,
+                      textColor: ColorUtils.green,
+                    ),
+                  ),
+                ],
               ),
-              const SizedBox(height: 20),
-              CustomSlideTransition(
-                offset: Tween<Offset>(
-                  begin: const Offset(1, 0.0),
-                  end: const Offset(0.0, 0.0),
-                ),
-                animationDuration: baseDuration + descriptionDuration,
-                child: Text(
-                  "I'm a software developer having 2 years experience in creating single-page applications using technologies such as Flutter, WPF. I'm your guy",
-                  style: TextStyleUtils.regular(12.sp)
-                      .copyWith(color: ColorUtils.white),
-                ),
-              ),
-              const SizedBox(height: 20),
-              CustomSlideTransition(
-                offset: Tween<Offset>(
-                  begin: const Offset(1, 0.0),
-                  end: const Offset(0.0, 0.0),
-                ),
-                animationDuration: baseDuration + descriptionDuration * 2,
-                child: CustomButton(
-                  name: 'CV PDF',
-                  onPressed: () => downloadFile(
-                      'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
-                  backgroundColor: ColorUtils.transparent,
-                  textColor: ColorUtils.green,
-                ),
-              ),
-            ],
-          ),
-        ],
-      );
-    }
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

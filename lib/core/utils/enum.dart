@@ -5,7 +5,7 @@ enum Pages {
   workExperience,
   skillset,
   aboutMe,
-  myProjectsDemo,
+  myDemoProjects,
   philosophyAndValues,
   testimonialSection,
   footer,
