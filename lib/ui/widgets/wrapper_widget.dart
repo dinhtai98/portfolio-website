@@ -79,7 +79,7 @@ class _WrapperWidget extends StatelessWidget {
                   child: CustomButton(
                     name: 'CV PDF',
                     onPressed: () => downloadFile(
-                        'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
+                        'https://drive.google.com/file/d/1US65zLium_2T3eAKyxtoO4Gr7KE_Tqlb/view?usp=share_link'),
                     backgroundColor: ColorUtils.transparent,
                     textColor: ColorUtils.green,
                   ),
@@ -162,7 +162,7 @@ class _WrapperWidget extends StatelessWidget {
                     child: CustomButton(
                       name: 'CV PDF',
                       onPressed: () => downloadFile(
-                          'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
+                          'https://drive.google.com/file/d/1US65zLium_2T3eAKyxtoO4Gr7KE_Tqlb/view?usp=share_link'),
                       backgroundColor: ColorUtils.transparent,
                       textColor: ColorUtils.green,
                     ),
@@ -246,7 +246,7 @@ class _WrapperWidget extends StatelessWidget {
                     child: CustomButton(
                       name: 'CV PDF',
                       onPressed: () => downloadFile(
-                          'https://drive.google.com/file/d/1taWtfbfFvbTSC-J95Ngw53O2A6uI3pEV/view?usp=share_link'),
+                          'https://drive.google.com/file/d/1US65zLium_2T3eAKyxtoO4Gr7KE_Tqlb/view?usp=share_link'),
                       backgroundColor: ColorUtils.transparent,
                       textColor: ColorUtils.green,
                     ),
