@@ -107,6 +107,36 @@ class ExperiencePage extends StatelessWidget {
                                 .copyWith(color: ColorUtils.transparent07),
                             overflow: TextOverflow.fade,
                           ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with POS device, firebase, FCM, Printer',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Train others, and share best practices',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with third-party libraries and APIs',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -285,6 +315,36 @@ class ExperiencePage extends StatelessWidget {
                             padding: const EdgeInsets.all(2),
                             child: Text(
                               '• Work with the client to solve problems and tech requirements - Research technology to apply to application',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with POS device, firebase, FCM, Printer',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Train others, and share best practices',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with third-party libraries and APIs',
                               style: TextStyleUtils.regular(
                                       Constants.descriptionSize)
                                   .copyWith(color: ColorUtils.transparent07),
@@ -472,6 +532,36 @@ class ExperiencePage extends StatelessWidget {
                             padding: const EdgeInsets.all(2),
                             child: Text(
                               '• Work with the client to solve problems and tech requirements - Research technology to apply to application',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with POS device, firebase, FCM, Printer',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Train others, and share best practices',
+                              style: TextStyleUtils.regular(
+                                      Constants.descriptionSize)
+                                  .copyWith(color: ColorUtils.transparent07),
+                              overflow: TextOverflow.fade,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(2),
+                            child: Text(
+                              '• Work with third-party libraries and APIs',
                               style: TextStyleUtils.regular(
                                       Constants.descriptionSize)
                                   .copyWith(color: ColorUtils.transparent07),
